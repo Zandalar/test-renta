@@ -1,6 +1,5 @@
 const {
   NODE_ENV,
-  JWT_SECRET,
   MONGO_URL,
   PORT = 3000,
 } = process.env;
@@ -13,8 +12,7 @@ const mongooseParams = {
 };
 
 module.exports = {
-  JWT_SECRET: NODE_ENV === 'production' ? JWT_SECRET : 'vodka-bear-balalayka',
-  MONGO_URL: NODE_ENV === 'production' ? MONGO_URL : 'mongodb://localhost:27017/moviesdb',
+  MONGO_URL: NODE_ENV === 'production' ? MONGO_URL : 'mongodb://localhost:27017/rentadb',
   PORT,
   mongooseParams,
 };
