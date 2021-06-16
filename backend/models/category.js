@@ -8,7 +8,6 @@ const categorySchema = new mongoose.Schema({
   },
   products: [{
     type : mongoose.Schema.Types.ObjectId,
-    ref: 'products',
     default: [],
   }],
   versionKey: false

@@ -1,6 +1,7 @@
-const notFoundErrorText = 'Запрашиваемый ресурс не найден';
+const categoryNotFoundErrorText = 'Категория не найдена!';
 const productNotFoundErrorText = 'Продукты не найдены!';
 const productIdNotFoundErrorText = 'Продукта с таким id не существует!';
+const categoryIdNotFoundErrorText = 'Категории с таким id не существует!';
 
 const limiterErrorText = 'Слишком много запросов. Попробуйте позже';
 const serverErrorText = 'На сервере произошла ошибка';
@@ -17,9 +18,10 @@ const idErrorText = 'Некорректный id';
 const passRegEx = /^\S+$/;
 
 module.exports = {
-  notFoundErrorText,
+  categoryNotFoundErrorText,
   productNotFoundErrorText,
   productIdNotFoundErrorText,
+  categoryIdNotFoundErrorText,
   limiterErrorText,
   serverErrorText,
   conflictErrorText,
