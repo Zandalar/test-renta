@@ -1,0 +1,9 @@
+.header__basket {
+  height: 24px;
+  display: flex;
+  align-items: center;
+  background-color: #e4002b;
+  border-radius: 15px;
+  color: #ffffff;
+  padding: 3px 10px;
+}

@@ -1,0 +1,8 @@
+.app {
+  height: 100vh;
+  background-color: #202020;
+  font-family: 'Cabin Condensed', 'Arial', 'Helvetica', sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  text-rendering: optimizeLegibility;
+}

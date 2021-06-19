@@ -1,0 +1,13 @@
+.header__menu {
+  width: 24px;
+  height: 24px;
+  background-image: url(../../../images/icon__burgerMenu.svg);
+  background-color: transparent;
+  box-sizing: border-box;
+  border: none;
+  outline: none;
+}
+
+.header__menu:hover {
+  cursor: pointer;
+}
