@@ -19,7 +19,8 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "start:production": "node backend/app.js"
+    "start:production": "node backend/app.js",
+    "prebuild": "cd backend && npm install && cd .."
   },
   "eslintConfig": {
     "extends": [
