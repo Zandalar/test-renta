@@ -13,6 +13,12 @@ const productSchema = new mongoose.Schema({
   delivery: {
     type: Boolean
   },
+  fresh: {
+    type: Boolean
+  },
+  hit: {
+    type: Boolean
+  },
   versionKey: false
 })
 

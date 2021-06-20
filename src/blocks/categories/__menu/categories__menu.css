@@ -1,0 +1,7 @@
+.categories__menu {
+  display: flex;
+  margin: 0 96px;
+  list-style: none;
+  padding: 16px 0;
+  justify-content: space-between;
+}

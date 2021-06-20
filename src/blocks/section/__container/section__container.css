@@ -1,0 +1,11 @@
+.section__container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, 288px);
+  grid-template-rows: repeat(auto-fill, 360px);
+  grid-row-gap: 32px;
+  grid-column-gap: 44px;
+  margin: 0 96px;
+  list-style: none;
+  padding: 0;
+  justify-content: center;
+}

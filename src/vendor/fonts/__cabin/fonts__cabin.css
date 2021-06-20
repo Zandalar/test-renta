@@ -13,9 +13,9 @@
   font-weight: 500;
   font-style: normal;
   src: url(./CabinCondensed-Medium.woff2) format('woff2'),
-  url(./CabinCondensed-Medium.woff) format('woff'),
-  url(./CabinCondensed-Medium.eot) format('embedded-opentype'),
-  url(./CabinCondensed-Medium.ttf) format('truetype');
+       url(./CabinCondensed-Medium.woff) format('woff'),
+       url(./CabinCondensed-Medium.eot) format('embedded-opentype'),
+       url(./CabinCondensed-Medium.ttf) format('truetype');
 }
 
 @font-face {
@@ -23,9 +23,9 @@
   font-weight: 600;
   font-style: normal;
   src: url(./CabinCondensed-SemiBold.woff2) format('woff2'),
-  url(./CabinCondensed-SemiBold.woff) format('woff'),
-  url(./CabinCondensed-SemiBold.eot) format('embedded-opentype'),
-  url(./CabinCondensed-SemiBold.ttf) format('truetype');
+       url(./CabinCondensed-SemiBold.woff) format('woff'),
+       url(./CabinCondensed-SemiBold.eot) format('embedded-opentype'),
+       url(./CabinCondensed-SemiBold.ttf) format('truetype');
 }
 
 @font-face {
@@ -33,7 +33,7 @@
   font-weight: bold;
   font-style: normal;
   src: url(./CabinCondensed-Bold.woff2) format('woff2'),
-  url(./CabinCondensed-Bold.woff) format('woff'),
-  url(./CabinCondensed-Bold.eot) format('embedded-opentype'),
-  url(./CabinCondensed-Bold.ttf) format('truetype');
+       url(./CabinCondensed-Bold.woff) format('woff'),
+       url(./CabinCondensed-Bold.eot) format('embedded-opentype'),
+       url(./CabinCondensed-Bold.ttf) format('truetype');
 }

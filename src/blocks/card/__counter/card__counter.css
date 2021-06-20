@@ -1,0 +1,10 @@
+.card__counter {
+  display: flex;
+  position: absolute;
+  top: 168px;
+  right: 56px;
+  background-color: #000000;
+  justify-content: center;
+  align-items: center;
+  border-radius: 20px;
+}

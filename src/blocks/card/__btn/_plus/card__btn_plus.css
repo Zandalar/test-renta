@@ -1,0 +1,5 @@
+.card__btn_plus {
+  background-image: url(../../../../images/icon__plus_white.svg);
+  background-color: #000000;
+  position: unset;
+}

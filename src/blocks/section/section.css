@@ -1,0 +1,12 @@
+@import url(./__container/section__container.css);
+@import url(./__title/section__title.css);
+
+.section {
+  width: 100%;
+  background-color: #f7f6f5;
+  padding: 40px 0 56px;
+}
+
+.section:nth-child(odd) {
+  background-color: #ffffff;
+}

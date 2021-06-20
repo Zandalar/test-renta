@@ -1,0 +1,5 @@
+.card__btn_minus {
+  background-image: url(../../../../images/icon__minus_white.svg);
+  background-color: #000000;
+  position: unset;
+}

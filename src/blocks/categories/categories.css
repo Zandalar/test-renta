@@ -1,0 +1,7 @@
+@import url(./__menu/categories__menu.css);
+@import url(./__menu-item/categories__menu-item.css);
+
+.categories {
+  width: 100%;
+  font-family: 'Barlow Condensed', 'Arial', 'Helvetica', sans-serif;
+}

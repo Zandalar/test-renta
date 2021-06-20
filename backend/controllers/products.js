@@ -21,11 +21,15 @@ function createProduct(req, res, next) {
     name,
     price,
     delivery,
+    fresh,
+    hit,
   } = req.body;
   Product.create({
     name,
     price,
     delivery,
+    fresh,
+    hit,
   })
     .then((product) => res.send(product))
     .catch((err) => {

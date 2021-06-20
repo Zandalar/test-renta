@@ -1,0 +1,13 @@
+@import url(./__buttons/delivery__buttons.css);
+@import url(./__btn/delivery__btn.css);
+@import url(./__btn/_active/delivery__btn_active.css);
+@import url(./__container/delivery__container.css);
+@import url(./__input/delivery__input.css);
+@import url(./__form/delivery__form.css);
+@import url(./__label/delivery__label.css);
+@import url(./__title/delivery__title.css);
+
+.delivery {
+  width: 100%;
+  padding: 110px 0 80px;
+}

@@ -1,0 +1,25 @@
+.card__btn {
+  width: 40px;
+  height: 40px;
+  position: absolute;
+  top: 168px;
+  right: 56px;
+  border: none;
+  border-radius: 50%;
+  outline: none;
+  box-sizing: border-box;
+  color: #ffffff;
+  font-size: 12px;
+  line-height: 12px;
+  background-image: url(../../../images/icon__plus_black.svg);
+  background-size: 16px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-color: #ffffff;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.08);
+  padding: 0;
+}
+
+.card__btn:hover {
+  cursor: pointer;
+}

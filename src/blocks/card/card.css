@@ -1,0 +1,28 @@
+@import url(./__container/card__container.css);
+@import url(./__image/card__image.css);
+@import url(./__name/card__name.css);
+@import url(./__price/card__price.css);
+@import url(./__badge/card__badge.css);
+@import url(./__badge/_fresh/card__badge_fresh.css);
+@import url(./__badge/_hit/card__badge_hit.css);
+@import url(./__btn/card__btn.css);
+@import url(./__btn/_minus/card__btn_minus.css);
+@import url(./__btn/_plus/card__btn_plus.css);
+@import url(./__counter/card__counter.css);
+@import url(./__counter-value/card__counter-value.css);
+
+.card {
+  height: 360px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font-size: 24px;
+  line-height: 32px;
+  position: relative;
+}
+
+.card:hover {
+  cursor: pointer;
+}

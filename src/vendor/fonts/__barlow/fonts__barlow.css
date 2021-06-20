@@ -1,0 +1,9 @@
+@font-face {
+  font-family: 'Barlow Condensed';
+  font-weight: normal;
+  font-style: normal;
+  src: url(./BarlowCondensed-Regular.woff2) format('woff2'),
+       url(./BarlowCondensed-Regular.woff) format('woff'),
+       url(./BarlowCondensed-Regular.eot) format('embedded-opentype'),
+       url(./BarlowCondensed-Regular.ttf) format('truetype');
+}
