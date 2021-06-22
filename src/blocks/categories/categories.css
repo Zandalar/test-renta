@@ -1,7 +1,12 @@
 @import url(./__menu/categories__menu.css);
+@import url(./__menu/_fixed/categories__menu_fixed.css);
 @import url(./__menu-item/categories__menu-item.css);
+@import url(./__menu-item/_active/categories__menu-item_active.css);
 
 .categories {
   width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   font-family: 'Barlow Condensed', 'Arial', 'Helvetica', sans-serif;
 }

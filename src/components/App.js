@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useDispatch } from 'react-redux';
 import * as api from '../utils/api';
 import Header from './Header';
@@ -11,8 +11,13 @@ import { setOrderCounter } from '../reducers/orderCounter';
 
 function App() {
   const [isLoading, setIsLoading] = React.useState(false);
+  const [scrollHeight, setScrollHeight] = useState(0);
 
   const dispatch = useDispatch();
+
+  function updateHeight() {
+    setScrollHeight(window.pageYOffset);
+  }
 
   useEffect(() => {
     setIsLoading(true);
@@ -27,11 +32,18 @@ function App() {
       .finally(() => setIsLoading(false))
   }, [])
 
+  useEffect(() => {
+    document.addEventListener('scroll', updateHeight);
+    return () => {
+      document.removeEventListener('scroll', updateHeight);
+    };
+  });
+
   return (
     <div className="app">
       <Header />
       <Delivery />
-      <Categories isLoading={isLoading} />
+      <Categories isLoading={isLoading} scrollHeight={scrollHeight} />
     </div>
   );
 }

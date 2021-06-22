@@ -41,10 +41,8 @@ const Card = ({ data }) => {
       <img className='card__image' src={burger} alt={data.name} />
       <p className='card__name'>{data.name}</p>
       <p className='card__price'>{data.price} &#8381;</p>
-      {data.fresh
-        ? <p className='card__badge card__badge_fresh'>Новое</p>
-        : <p className='card__badge card__badge_hit'>Хит</p>
-      }
+      {data.fresh && <p className='card__badge card__badge_fresh'>Новое</p>}
+      {data.hit && <p className='card__badge card__badge_hit'>Хит</p>}
       {isOrderCounterShown
         ? <div className='card__counter'>
           <button className='card__btn card__btn_minus' type='button' onClick={decreaseCounter} />

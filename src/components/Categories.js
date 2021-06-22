@@ -1,19 +1,31 @@
 import React from 'react';
+import { Link } from 'react-scroll';
 import { useSelector } from 'react-redux';
 import Preloader from './Preloader';
 import Section from './Section';
 
-const Categories = ({ isLoading }) => {
+const Categories = ({ isLoading, scrollHeight }) => {
   const categoriesArr = useSelector((state) => state.categories.categoriesArr);
 
   return (
     <section className='categories'>
-      <ul className='categories__menu'>
+      <ul className={`categories__menu${scrollHeight > 450 ? ' categories__menu_fixed' : ''}`}>
         {isLoading
           ? <Preloader />
           : categoriesArr.map(item => {
             return (
-              <li className='categories__menu-item' key={item._id} id={item._id}>{item.name}</li>
+              <Link
+                to={item._id}
+                className='categories__menu-item'
+                activeClass='categories__menu-item_active'
+                id={Math.random()}
+                spy={true}
+                smooth={true}
+                offset={0}
+                duration={500}
+              >
+                {item.name}
+              </Link>
             )
           })
         }
@@ -26,6 +38,7 @@ const Categories = ({ isLoading }) => {
               <Section key={item._id} data={item} isLoading={isLoading} />
             )
           }
+          return null;
         })
       }
     </section>
