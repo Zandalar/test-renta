@@ -43,21 +43,21 @@ const Footer = () => {
       <div className='footer__social'>
         <ul className='footer__social-list'>
           <li className='footer__social-item'>
-            <a className='footer__social-link footer__social-link_vk' href='https://vk.com/' target='_blank' rel='noreferrer' />
+            <a className='footer__social-link footer__social-link_vk' href='https://vk.com/' target='_blank' rel='noreferrer'> </a>
           </li>
           <li className='footer__social-item'>
-            <a className='footer__social-link footer__social-link_fb' href='https://facebook.com/' target='_blank' rel='noreferrer' />
+            <a className='footer__social-link footer__social-link_fb' href='https://facebook.com/' target='_blank' rel='noreferrer'> </a>
           </li>
           <li className='footer__social-item'>
-            <a className='footer__social-link footer__social-link_twitter' href='https://twitter.com/' target='_blank' rel='noreferrer' />
+            <a className='footer__social-link footer__social-link_twitter' href='https://twitter.com/' target='_blank' rel='noreferrer'> </a>
           </li>
           <li className='footer__social-item'>
-            <a className='footer__social-link footer__social-link_ok' href='https://ok.ru/' target='_blank' rel='noreferrer' />
+            <a className='footer__social-link footer__social-link_ok' href='https://ok.ru/' target='_blank' rel='noreferrer'> </a>
           </li>
         </ul>
         <div className='footer__download'>
-          <a className='footer__download-link footer__download-link_google' href='https://play.google.com/store' target='_blank' rel='noreferrer' />
-          <a className='footer__download-link footer__download-link_apple' href='https://www.apple.com/ru/app-store' target='_blank' rel='noreferrer' />
+          <a className='footer__download-link footer__download-link_google' href='https://play.google.com/store' target='_blank' rel='noreferrer'> </a>
+          <a className='footer__download-link footer__download-link_apple' href='https://www.apple.com/ru/app-store' target='_blank' rel='noreferrer'> </a>
         </div>
       </div>
     </footer>
