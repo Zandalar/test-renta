@@ -6,6 +6,7 @@
 @import url(./__form/delivery__form.css);
 @import url(./__label/delivery__label.css);
 @import url(./__title/delivery__title.css);
+@import url(./__block/delivery__block.css);
 
 .delivery {
   width: 100%;

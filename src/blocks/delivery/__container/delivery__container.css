@@ -1,8 +1,5 @@
 .delivery__container {
-  display: grid;
-  grid-template-columns: repeat(2, max-content);
-  grid-row-gap: 47px;
+  display: flex;
   justify-content: space-between;
   margin: 0 96px;
-  align-items: center;
 }

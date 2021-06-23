@@ -5,6 +5,7 @@ import { useSelector } from 'react-redux';
 
 const Section = ({ data, isLoading }) => {
   const productsArr = useSelector((state) => state.products.productsArr);
+  const isDelivery = useSelector((state) => state.delivery.isDelivery);
 
   const filteredProducts = data.products.map((item) => {
     return productsArr.find(data => data._id === item)
@@ -17,9 +18,13 @@ const Section = ({ data, isLoading }) => {
         {isLoading
           ? <Preloader />
           : filteredProducts.map(item => {
-            return (
-              <Card key={item._id} data={item} />
-            )
+            if (isDelivery && item.delivery === false) {
+              return null;
+            } else {
+              return (
+                <Card key={item._id} data={item} />
+              )
+            }
           })
         }
       </ul>
