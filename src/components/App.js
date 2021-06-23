@@ -4,18 +4,39 @@ import * as api from '../utils/api';
 import Header from './Header';
 import Delivery from './Delivery';
 import Categories from './Categories';
+import Footer from './Footer';
+import InfoTooltip from './InfoTooltip';
 import { setCategoriesArr } from '../reducers/categories';
 import { setProductsArr } from '../reducers/products';
-import Footer from './Footer';
+
 
 const App = () => {
-  const [isLoading, setIsLoading] = React.useState(false);
+  const [isLoading, setIsLoading] = useState(false);
   const [scrollHeight, setScrollHeight] = useState(0);
+  const [isInfoTooltipPopupOpen, setIsInfoTooltipPopupOpen] = React.useState(false);
 
   const dispatch = useDispatch();
 
   function updateHeight() {
     setScrollHeight(window.pageYOffset);
+  }
+
+  function isolatePopup(evt) {
+    evt.stopPropagation();
+  }
+
+  function closeAllPopups() {
+    setIsInfoTooltipPopupOpen(false);
+  }
+
+  function handleEscClick(evt) {
+    if (evt.key === 'Escape') {
+      closeAllPopups();
+    }
+  }
+
+  function handleBasketClick() {
+    setIsInfoTooltipPopupOpen(true);
   }
 
   useEffect(() => {
@@ -33,17 +54,24 @@ const App = () => {
 
   useEffect(() => {
     document.addEventListener('scroll', updateHeight);
+    window.addEventListener('keydown', handleEscClick);
     return () => {
       document.removeEventListener('scroll', updateHeight);
+      window.removeEventListener('keydown', handleEscClick);
     };
   });
 
   return (
     <div className="app">
-      <Header />
+      <Header handleBasketClick={handleBasketClick} />
       <Delivery />
       <Categories isLoading={isLoading} scrollHeight={scrollHeight} />
       <Footer />
+      <InfoTooltip
+        isOpen={isInfoTooltipPopupOpen}
+        onClose={closeAllPopups}
+        isolatePopup={isolatePopup}
+      />
     </div>
   );
 }

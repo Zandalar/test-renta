@@ -1,9 +1,18 @@
 .header__basket {
-  height: 24px;
+  height: 28px;
   display: flex;
   align-items: center;
   background-color: #e4002b;
   border-radius: 20px;
   color: #ffffff;
-  padding: 5px 10px;
+  padding: 10px;
+  outline: none;
+  border: none;
+  transition: opacity .2s ease;
+}
+
+.header__basket:hover {
+  cursor: pointer;
+  opacity: .6;
+  transition: opacity .2s ease;
 }
