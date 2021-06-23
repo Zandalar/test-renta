@@ -1,6 +1,4 @@
 import React, {useState} from 'react';
-import stripes from '../images/stripes.png';
-import twister from '../images/twister.png';
 import burger from '../images/burger.png';
 import { useDispatch, useSelector } from 'react-redux';
 import {setOrderCounter} from '../reducers/orderCounter';

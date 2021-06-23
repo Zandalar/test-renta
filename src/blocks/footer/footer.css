@@ -1,0 +1,26 @@
+@import url(./__container/footer__container.css);
+@import url(./__download/footer__download.css);
+@import url(./__download-link/footer__download-link.css);
+@import url(./__download-link/_apple/footer__download-link_apple.css);
+@import url(./__download-link/_google/footer__download-link_google.css);
+@import url(./__image/footer__image.css);
+@import url(./__logo/footer__logo.css);
+@import url(./__nav/footer__nav.css);
+@import url(./__nav-item/footer__nav-item.css);
+@import url(./__nav-title/footer__nav-title.css);
+@import url(./__social/footer__social.css);
+@import url(./__social-item/footer__social-item.css);
+@import url(./__social-link/footer__social-link.css);
+@import url(./__social-link/_fb/footer__social-link_fb.css);
+@import url(./__social-link/_ok/footer__social-link_ok.css);
+@import url(./__social-link/_twitter/footer__social-link_twitter.css);
+@import url(./__social-link/_vk/footer__social-link_vk.css);
+@import url(./__social-list/footer__social-list.css);
+
+.footer {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-bottom: 75px;
+}

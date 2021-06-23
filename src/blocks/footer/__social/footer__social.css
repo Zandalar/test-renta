@@ -1,0 +1,7 @@
+.footer__social {
+  width: calc(100% - 192px);
+  height: 32px;
+  display: flex;
+  justify-content: flex-end;
+  position: relative;
+}

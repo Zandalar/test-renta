@@ -1,0 +1,4 @@
+.footer__download {
+  display: flex;
+  justify-content: flex-end;
+}

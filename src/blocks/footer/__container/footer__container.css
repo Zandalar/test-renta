@@ -1,0 +1,7 @@
+.footer__container {
+  width: calc(100% - 192px);
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin: 70px 0 120px;
+}

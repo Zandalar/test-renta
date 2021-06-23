@@ -1,0 +1,10 @@
+.footer__download-link {
+  display: flex;
+  background-repeat: no-repeat;
+  transition: opacity .2s ease;
+}
+
+.footer__download-link:hover {
+  opacity: .6;
+  transition: opacity .2s ease;
+}

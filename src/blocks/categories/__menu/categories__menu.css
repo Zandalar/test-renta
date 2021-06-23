@@ -1,8 +1,9 @@
 .categories__menu {
-  width: 86.66%;
+  width: 100%;
+  padding: 0 96px;
   display: flex;
   margin: 0;
-  padding: 0;
   list-style: none;
   justify-content: space-between;
+  box-sizing: border-box;
 }

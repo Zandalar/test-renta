@@ -1,0 +1,13 @@
+.footer__social-list {
+  width: 192px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, 24px);
+  grid-column-gap: 32px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  position: absolute;
+  top: 4px;
+  left: 50%;
+  transform: translate(-50%, 0);
+}

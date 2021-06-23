@@ -6,10 +6,9 @@ import Delivery from './Delivery';
 import Categories from './Categories';
 import { setCategoriesArr } from '../reducers/categories';
 import { setProductsArr } from '../reducers/products';
-import { setOrderCounter } from '../reducers/orderCounter';
+import Footer from './Footer';
 
-
-function App() {
+const App = () => {
   const [isLoading, setIsLoading] = React.useState(false);
   const [scrollHeight, setScrollHeight] = useState(0);
 
@@ -30,7 +29,7 @@ function App() {
       })
       .catch((err) => console.log(`Что-то пошло не так :( ${err}`))
       .finally(() => setIsLoading(false))
-  }, [])
+  }, [dispatch])
 
   useEffect(() => {
     document.addEventListener('scroll', updateHeight);
@@ -44,6 +43,7 @@ function App() {
       <Header />
       <Delivery />
       <Categories isLoading={isLoading} scrollHeight={scrollHeight} />
+      <Footer />
     </div>
   );
 }

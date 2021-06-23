@@ -3,6 +3,9 @@
 
 .section {
   width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   background-color: #f7f6f5;
   padding: 40px 0 56px;
 }
