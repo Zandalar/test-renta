@@ -8,7 +8,9 @@
 @import url(./blocks/delivery/delivery.css);
 @import url(./blocks/categories/categories.css);
 @import url(./blocks/preloader/preloader.css);
-@import url(blocks/section/section.css);
+@import url(./blocks/section/section.css);
+@import url(./blocks/section/_grey/section_grey.css);
 @import url(./blocks/card/card.css);
 @import url(./blocks/card/_active/card_active.css);
+@import url(./blocks/card/_active-grey/card_active-grey.css);
 @import url(./blocks/footer/footer.css);

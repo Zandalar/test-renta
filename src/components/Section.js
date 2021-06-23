@@ -3,7 +3,7 @@ import Card from './Card';
 import Preloader from './Preloader';
 import { useSelector } from 'react-redux';
 
-const Section = ({ data, isLoading }) => {
+const Section = ({ data, isLoading, sectionType }) => {
   const productsArr = useSelector((state) => state.products.productsArr);
   const isDelivery = useSelector((state) => state.delivery.isDelivery);
 
@@ -12,7 +12,7 @@ const Section = ({ data, isLoading }) => {
   })
 
   return (
-    <section className='section' id={data._id}>
+    <section className={sectionType} id={data._id}>
       <h2 className='section__title'>{data.name}</h2>
       <ul className='section__container'>
         {isLoading
@@ -22,7 +22,7 @@ const Section = ({ data, isLoading }) => {
               return null;
             } else {
               return (
-                <Card key={item._id} data={item} />
+                <Card key={item._id} data={item} sectionType={sectionType} />
               )
             }
           })

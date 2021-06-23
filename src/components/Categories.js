@@ -18,7 +18,7 @@ const Categories = ({ isLoading, scrollHeight }) => {
                 to={item._id}
                 className='categories__menu-item'
                 activeClass='categories__menu-item_active'
-                id={Math.random()}
+                id={categoriesArr.indexOf(item)}
                 spy={true}
                 smooth={true}
                 offset={0}
@@ -35,7 +35,11 @@ const Categories = ({ isLoading, scrollHeight }) => {
         : categoriesArr.map(item => {
           if (item.products.length !== 0) {
             return (
-              <Section key={item._id} data={item} isLoading={isLoading} />
+              <Section
+                key={item._id}
+                data={item}
+                isLoading={isLoading}
+                sectionType={(categoriesArr.indexOf(item) % 2 === 0) ? 'section section_grey' : 'section'}/>
             )
           }
           return null;

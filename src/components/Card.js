@@ -4,7 +4,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import {setOrderCounter} from '../reducers/orderCounter';
 
 
-const Card = ({ data }) => {
+const Card = ({ data, sectionType }) => {
   const [isCardHover, setIsCardHover] = useState(false);
   const [isOrderCounterShown, setIsOrderCounterShown] = useState(false);
   const counter = useSelector((state) => state.orderCounter.orderCounter);
@@ -35,7 +35,7 @@ const Card = ({ data }) => {
   }
 
   return (
-    <li className={`card${isCardHover ? ' card_active' : ''}`} id={data._id} onMouseOver={onHoverCard} onMouseLeave={onLeaveCard}>
+    <li className={`card${isCardHover ? ((sectionType === 'section') ? ' card_active-grey' : ' card_active') : ''}`} id={data._id} onMouseOver={onHoverCard} onMouseLeave={onLeaveCard}>
       <img className='card__image' src={burger} alt={data.name} />
       <p className='card__name'>{data.name}</p>
       <p className='card__price'>{data.price} &#8381;</p>
