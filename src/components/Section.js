@@ -17,7 +17,7 @@ const Section = ({ data, isLoading, sectionType }) => {
       <ul className='section__container'>
         {isLoading
           ? <Preloader />
-          : filteredProducts.map(item => {
+          : filteredProducts.map((item, index) => {
             if (isDelivery && item.delivery === false) {
               return null;
             } else {

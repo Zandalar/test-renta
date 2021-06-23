@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from 'react';
 import burger from '../images/burger.png';
 import { useDispatch, useSelector } from 'react-redux';
-import {setOrderCounter} from '../reducers/orderCounter';
+import { setOrderCounter, setOrderProductsList } from '../reducers/orderCounter';
 
 
 const Card = ({ data, sectionType }) => {
@@ -28,11 +28,13 @@ const Card = ({ data, sectionType }) => {
   function increaseCounter() {
     setProductCount(productCount + 1);
     dispatch(setOrderCounter(counter + data.price));
+    dispatch(setOrderProductsList({ name: data.name, count: productCount }));
   }
 
   function decreaseCounter() {
     setProductCount(productCount - 1);
     dispatch(setOrderCounter(counter - data.price));
+    dispatch(setOrderProductsList({ name: data.name, count: productCount }));
     if (productCount < 2) {
       setIsOrderCounterShown(false);
       setProductCount(1);
@@ -43,7 +45,7 @@ const Card = ({ data, sectionType }) => {
     setProductCount(1);
     setIsOrderCounterShown(false);
     dispatch(setOrderCounter(0));
-  }, [isDelivery])
+  }, [isDelivery, dispatch])
 
   return (
     <li
@@ -52,7 +54,7 @@ const Card = ({ data, sectionType }) => {
       onMouseOver={onHoverCard}
       onMouseLeave={onLeaveCard}
     >
-      <img className='card__image' src={burger} alt={data.name} />
+      <img className={!isCardHover ? 'card__image' : 'card__image card__image_active'} src={burger} alt={data.name} />
       <p className='card__name'>{data.name}</p>
       <p className='card__price'>{data.price} &#8381;</p>
       {data.fresh && <p className='card__badge card__badge_fresh'>Новое</p>}

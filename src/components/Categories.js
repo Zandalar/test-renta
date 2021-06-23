@@ -12,13 +12,13 @@ const Categories = ({ isLoading, scrollHeight }) => {
       <ul className={`categories__menu${scrollHeight > 450 ? ' categories__menu_fixed' : ''}`}>
         {isLoading
           ? <Preloader />
-          : categoriesArr.map(item => {
+          : categoriesArr.map((item, index) => {
             return (
               <Link
                 to={item._id}
                 className='categories__menu-item'
                 activeClass='categories__menu-item_active'
-                id={categoriesArr.indexOf(item)}
+                key={index}
                 spy={true}
                 smooth={true}
                 offset={0}
@@ -32,11 +32,11 @@ const Categories = ({ isLoading, scrollHeight }) => {
       </ul>
       {isLoading
         ? <Preloader />
-        : categoriesArr.map(item => {
+        : categoriesArr.map((item, index) => {
           if (item.products.length !== 0) {
             return (
               <Section
-                key={item._id}
+                key={index}
                 data={item}
                 isLoading={isLoading}
                 sectionType={(categoriesArr.indexOf(item) % 2 === 0) ? 'section section_grey' : 'section'}/>
