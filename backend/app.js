@@ -1,6 +1,7 @@
 require('dotenv').config();
 const path = require('path');
 const express = require('express');
+const fileUpload = require('express-fileupload');
 const mongoose = require('mongoose');
 const helmet = require('helmet');
 const cors = require('cors');
@@ -18,11 +19,21 @@ const app = express();
 
 mongoose.connect(config.MONGO_URL, config.mongooseParams);
 
+app.use(
+
+  fileUpload({
+
+    createParentPath: true,
+
+  })
+
+);
+
 app.use(express.static(staticPath));
 app.use(helmet());
 app.use(cors());
 app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.urlencoded({ extended: true }));
 app.use(requestLogger);
 app.use(limiter);
 app.use('/', router);

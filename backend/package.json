@@ -22,7 +22,8 @@
     "mongoose": "^5.12.14",
     "validator": "^13.6.0",
     "winston": "^3.3.3",
-    "helmet": "^4.6.0"
+    "helmet": "^4.6.0",
+    "express-fileupload": "^1.2.1"
   },
   "devDependencies": {
     "eslint": "^7.19.0",

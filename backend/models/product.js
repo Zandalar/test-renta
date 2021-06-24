@@ -19,6 +19,9 @@ const productSchema = new mongoose.Schema({
   hit: {
     type: Boolean
   },
+  img: {
+    type: String,
+  },
   versionKey: false
 })
 

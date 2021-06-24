@@ -1,3 +1,5 @@
+const fs = require('fs');
+const path = require('path');
 const Product = require('../models/product');
 const NotFoundError = require('../errors/NotFoundError');
 const ConflictError = require('../errors/ConflictError');
@@ -8,6 +10,7 @@ const {
   idValidationErrorText,
   productIdNotFoundErrorText
 } = require('../constants/constants');
+const uploadsPath = path.resolve(`${__dirname}/../../${process.env.NODE_ENV === 'production' ? 'build/static/media' : 'src/images'}`);
 
 function getProducts(req, res, next) {
   Product.find({})
@@ -24,13 +27,52 @@ function createProduct(req, res, next) {
     fresh,
     hit,
   } = req.body;
+  const imgPath = path.resolve(`${uploadsPath}/${req.files.img.name}`);
+
+  if (!fs.existsSync(uploadsPath)) {
+
+    fs.mkdirSync(uploadsPath);
+
+  }
+
+  fs.writeFileSync(imgPath, req.files.img.data);
+
   Product.create({
     name,
     price,
     delivery,
     fresh,
     hit,
+    img: `static/media/${req.files.img.name}`,
   })
+    .then((product) => res.send(product))
+    .catch((err) => {
+      if (err.code === 11000 && err.name === 'MongoError') {
+        throw new ConflictError(conflictErrorText);
+      }
+      throw err;
+    })
+    .catch(next);
+}
+
+function updateProduct(req, res, next) {
+  const updatedProduct = {};
+  for (const prop in req.body) {
+    updatedProduct[prop] = req.body[prop]
+  }
+  const imgPath = path.resolve(`${uploadsPath}/${req.files.img.name}`);
+  if (req.files && req.files.img) {
+    if (!fs.existsSync(uploadsPath)) {
+
+      fs.mkdirSync(uploadsPath);
+
+    }
+
+    fs.writeFileSync(imgPath, req.files.img.data);
+    updatedProduct.img = `static/media/${req.files.img.name}`
+  }
+
+  Product.findByIdAndUpdate(req.params.productId, updatedProduct)
     .then((product) => res.send(product))
     .catch((err) => {
       if (err.code === 11000 && err.name === 'MongoError') {
@@ -58,4 +100,4 @@ function deleteProduct(req, res, next) {
     .catch(next);
 }
 
-module.exports = { getProducts, createProduct, deleteProduct };
+module.exports = { getProducts, createProduct, updateProduct, deleteProduct };
