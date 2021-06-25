@@ -7,6 +7,9 @@
 @import url(./__label/delivery__label.css);
 @import url(./__title/delivery__title.css);
 @import url(./__block/delivery__block.css);
+@import url(./__input-error/delivery__input-error.css);
+@import url(./__input-error/_active/delivery__input-error_active.css);
+@import url(./__inputs/delivery__inputs.css);
 
 .delivery {
   width: 100%;

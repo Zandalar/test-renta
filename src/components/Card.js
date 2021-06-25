@@ -11,9 +11,7 @@ const Card = ({ data, sectionType }) => {
   const [productCount, setProductCount] = useState(1);
   const basketPriceCounter = useSelector((state) => state.basketPriceCounter.basketPriceCounter);
   const isDelivery = useSelector((state) => state.delivery.isDelivery);
-  const basketProductsList = useSelector((state) => state.orderBasket.productsList);
   const dispatch = useDispatch();
-
 
   function onHoverCard() {
     setIsCardHover(true);

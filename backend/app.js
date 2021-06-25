@@ -1,7 +1,6 @@
 require('dotenv').config();
 const path = require('path');
 const express = require('express');
-const fileUpload = require('express-fileupload');
 const mongoose = require('mongoose');
 const helmet = require('helmet');
 const cors = require('cors');
@@ -12,22 +11,13 @@ const limiter = require('./middlewares/limiter');
 const router = require('./routes/index');
 const centralErrorHandler = require('./middlewares/centralErrorHandler');
 const config = require('./config/config');
+const fileUploader = require('./middlewares/fileUpload');
 
 const staticPath = path.join(__dirname, '..', 'build');
 
 const app = express();
 
 mongoose.connect(config.MONGO_URL, config.mongooseParams);
-
-app.use(
-
-  fileUpload({
-
-    createParentPath: true,
-
-  })
-
-);
 
 app.use(express.static(staticPath));
 app.use(helmet());
@@ -36,6 +26,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(requestLogger);
 app.use(limiter);
+app.use(fileUploader);
 app.use('/', router);
 app.use(errorLogger);
 app.use(errors());

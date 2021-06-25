@@ -1,0 +1,16 @@
+.delivery__input-error {
+  font-family: "Cabin Condensed", "Arial", "Helvetica", sans-serif;
+  font-weight: bold;
+  font-size: 18px;
+  line-height: 22px;
+  background: #000000;
+  border-radius: 8px;
+  color: #ffffff;
+  grid-column-start: 1;
+  grid-column-end: 3;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  padding: 12px 20px;
+  text-align: center;
+}

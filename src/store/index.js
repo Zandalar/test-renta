@@ -4,6 +4,7 @@ import productsReducer from '../reducers/products';
 import basketPriceReducer from '../reducers/basketPriceCounter';
 import deliveryReducer from '../reducers/delivery';
 import orderBasketReducer from '../reducers/orderBasket';
+import validationReducer from '../reducers/validation';
 
 export default configureStore({
   reducer: {
@@ -12,5 +13,6 @@ export default configureStore({
     basketPriceCounter: basketPriceReducer,
     delivery: deliveryReducer,
     orderBasket: orderBasketReducer,
+    validation: validationReducer,
   },
 })

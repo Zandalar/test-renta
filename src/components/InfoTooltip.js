@@ -10,9 +10,9 @@ function InfoTooltip({ isOpen, onClose, isolatePopup }) {
       <div className='popup__container' onClick={isolatePopup}>
         <button className='popup__btn' type='button' onClick={onClose} />
         <p className='popup__message'>{`Ваш заказ на сумму: ${basketPriceCounter}`} &#8381;</p>
-        {basketProductsList.map((item) => {
+        {basketProductsList.map((item, index) => {
           return (
-            <p className='popup__message'>{`${item.name} x ${item.count}`}</p>
+            <p className='popup__message' id={index}>{`${item.name} x ${item.count}`}</p>
           )
         })}
       </div>

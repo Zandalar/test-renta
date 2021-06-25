@@ -1,8 +1,11 @@
-import React from 'react';
+import React, {useEffect} from 'react';
+import useValidator from '../hooks/useValidator';
 import { useDispatch, useSelector } from 'react-redux';
 import { setIsDelivery } from '../reducers/delivery';
+import { setIsValid } from '../reducers/validation';
 
 const Delivery = () => {
+  const { values, errors, isValid, handleChange } = useValidator();
   const isDelivery = useSelector((state) => state.delivery.isDelivery);
   const dispatch = useDispatch();
 
@@ -14,6 +17,10 @@ const Delivery = () => {
     dispatch(setIsDelivery(false));
   }
 
+  useEffect(() => {
+    dispatch(setIsValid(isValid))
+  }, [isValid])
+
   return (
     <section className='delivery'>
       <div className='delivery__container'>
@@ -22,10 +29,39 @@ const Delivery = () => {
           ? <>
               <h2 className='delivery__title'>Доставка г. Москва</h2>
               <form className='delivery__form' name='address'>
-                <label className='delivery__label' htmlFor='street'>Улица</label>
-                <input className='delivery__input' id='street' type='text' placeholder='Введите улицу' />
-                <label className='delivery__label' htmlFor='house'>Дом</label>
-                <input className='delivery__input' id='house' type='number' placeholder='Введите номер дома' />
+                <div className='delivery__inputs'>
+                  <label className='delivery__label' htmlFor='street'>Улица</label>
+                  <input
+                    className='delivery__input'
+                    id='street'
+                    name='street'
+                    type='text'
+                    value={values.street || ''}
+                    minLength='5'
+                    onChange={handleChange}
+                    placeholder='Введите улицу'
+                    required
+                  />
+                  <span className={`delivery__input-error ${errors.street && 'delivery__input-error_active'}`}>
+                    {errors.street || ''}
+                  </span>
+                </div>
+                <div className='delivery__inputs'>
+                  <label className='delivery__label' htmlFor='house'>Дом</label>
+                  <input
+                    className='delivery__input'
+                    id='house'
+                    name='house'
+                    type='number'
+                    value={values.house || ''}
+                    onChange={handleChange}
+                    placeholder='Введите номер дома'
+                    required
+                  />
+                  <span className={`delivery__input-error ${errors.house && 'delivery__input-error_active'}`}>
+                    {errors.house || ''}
+                  </span>
+                </div>
               </form>
             </>
           : null
