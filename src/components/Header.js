@@ -4,7 +4,7 @@ import emptyBasket from '../images/icon__basket.svg';
 import { useSelector } from 'react-redux';
 
 const Header = ({ handleBasketClick }) => {
-  const counter = useSelector((state) => state.orderCounter.orderCounter);
+  const basketPriceCounter = useSelector((state) => state.basketPriceCounter.basketPriceCounter);
 
   return (
     <header className='header'>
@@ -12,7 +12,7 @@ const Header = ({ handleBasketClick }) => {
         <img className='header__logo' src={logo} alt='logo' />
         <button className='header__menu' type='button' />
         <button className='header__basket' onClick={handleBasketClick}>
-          <p className='header__basket-count'>{counter} &#8381;</p>
+          <p className='header__basket-count'>{basketPriceCounter} &#8381;</p>
           <img className='header__basket-image' src={emptyBasket} alt='empty basket' />
         </button>
       </div>

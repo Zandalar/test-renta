@@ -1,17 +1,19 @@
 import React, {useEffect, useState} from 'react';
 import burger from '../images/burger.png';
 import { useDispatch, useSelector } from 'react-redux';
-import { setOrderCounter, setOrderProductsList } from '../reducers/orderCounter';
+import { setBasketPriceCounter} from '../reducers/basketPriceCounter';
+import { setProductsList, increaseProductCount, decreaseProductCount } from '../reducers/orderBasket';
 
 
 const Card = ({ data, sectionType }) => {
   const [isCardHover, setIsCardHover] = useState(false);
   const [isOrderCounterShown, setIsOrderCounterShown] = useState(false);
   const [productCount, setProductCount] = useState(1);
-  const [orderList, setOrderList] = useState([]);
-  const counter = useSelector((state) => state.orderCounter.orderCounter);
+  const basketPriceCounter = useSelector((state) => state.basketPriceCounter.basketPriceCounter);
   const isDelivery = useSelector((state) => state.delivery.isDelivery);
+  const basketProductsList = useSelector((state) => state.orderBasket.productsList);
   const dispatch = useDispatch();
+
 
   function onHoverCard() {
     setIsCardHover(true);
@@ -21,29 +23,22 @@ const Card = ({ data, sectionType }) => {
     setIsCardHover(false);
   }
 
-  function changeBasketProductCount() {
-    let order = [];
-    order.find(item => item.name === data.name ? item.count + 1 : order.push(item))
-    setOrderList(order);
-  }
-
   function onCounterClick() {
     setIsOrderCounterShown(true);
-    changeBasketProductCount();
-    dispatch(setOrderCounter(counter + data.price));
-    dispatch(setOrderProductsList(orderList));
+    dispatch(setProductsList({name: data.name, count: productCount}));
+    dispatch(setBasketPriceCounter(basketPriceCounter + data.price));
   }
 
   function increaseCounter() {
     setProductCount(productCount + 1);
-    dispatch(setOrderCounter(counter + data.price));
-    // dispatch(setOrderProductsList({ name: data.name, count: productCount }));
+    dispatch(increaseProductCount(data.name))
+    dispatch(setBasketPriceCounter(basketPriceCounter + data.price));
   }
 
   function decreaseCounter() {
     setProductCount(productCount - 1);
-    dispatch(setOrderCounter(counter - data.price));
-    // dispatch(setOrderProductsList({ name: data.name, count: productCount }));
+    dispatch(decreaseProductCount(data.name))
+    dispatch(setBasketPriceCounter(basketPriceCounter - data.price));
     if (productCount < 2) {
       setIsOrderCounterShown(false);
       setProductCount(1);
@@ -53,7 +48,7 @@ const Card = ({ data, sectionType }) => {
   useEffect(() => {
     setProductCount(1);
     setIsOrderCounterShown(false);
-    dispatch(setOrderCounter(0));
+    dispatch(setBasketPriceCounter(0));
   }, [isDelivery, dispatch])
 
   return (
