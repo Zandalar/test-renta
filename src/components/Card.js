@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from 'react';
-import burger from '../images/burger.png';
 import { useDispatch, useSelector } from 'react-redux';
+import LazyLoad from 'react-lazyload';
 import { setBasketPriceCounter} from '../reducers/basketPriceCounter';
 import { setProductsList, increaseProductCount, decreaseProductCount, setConfirmOrder } from '../reducers/orderBasket';
+import burger from '../images/burger.png';
 
 const Card = ({ data, sectionType }) => {
   const [isCardHover, setIsCardHover] = useState(false);
@@ -57,7 +58,9 @@ const Card = ({ data, sectionType }) => {
       onMouseOver={onHoverCard}
       onMouseLeave={onLeaveCard}
     >
-      <img className={!isCardHover ? 'card__image' : 'card__image card__image_active'} src={data.img ? data.img : burger} alt={data.name} />
+      <LazyLoad>
+        <img className={!isCardHover ? 'card__image' : 'card__image card__image_active'} src={data.img ? data.img : burger} alt={data.name} />
+      </LazyLoad>
       <p className='card__name'>{data.name}</p>
       <p className='card__price'>{data.price} &#8381;</p>
       {data.fresh && <p className='card__badge card__badge_fresh'>Новое</p>}
