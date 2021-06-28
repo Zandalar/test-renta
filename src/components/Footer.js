@@ -5,11 +5,11 @@ const Footer = ({ windowWidth }) => {
   return (
     <footer className='footer'>
       <img className='footer__logo' src={logo} alt='logo' />
+      {windowWidth < 1100
+        ? <div className='footer__image' />
+        : null
+      }
       <div className='footer__container'>
-        {windowWidth < 1100
-          ? <div className='footer__image' />
-          : null
-        }
         <nav className='footer__nav'>
           <h2 className='footer__nav-title'>Раздел 1</h2>
           <ul className='footer__menu'>

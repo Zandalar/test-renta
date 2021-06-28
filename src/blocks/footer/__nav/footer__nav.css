@@ -17,8 +17,4 @@
   .footer__nav {
     margin-bottom: 20px;
   }
-
-  .footer__nav:last-child {
-    margin-bottom: 0;
-  }
 }

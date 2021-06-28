@@ -1,6 +1,11 @@
+.footer__logo {
+  margin-bottom: 70px;
+}
+
 @media all and (max-width: 600px) {
   .footer__logo {
     width: 80px;
     height: 36px;
+    margin-bottom: 20px;
   }
 }
