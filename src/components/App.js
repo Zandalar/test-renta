@@ -9,7 +9,6 @@ import InfoTooltip from './InfoTooltip';
 import { setCategoriesArr } from '../reducers/categories';
 import { setProductsArr } from '../reducers/products';
 
-
 const App = () => {
   const [isLoading, setIsLoading] = useState(false);
   const [scrollHeight, setScrollHeight] = useState(0);

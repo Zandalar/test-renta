@@ -1,9 +1,8 @@
-import React, {useEffect, useState} from 'react';
+import React, { useEffect, useState } from 'react';
 import burger from '../images/burger.png';
 import { useDispatch, useSelector } from 'react-redux';
 import { setBasketPriceCounter} from '../reducers/basketPriceCounter';
-import { setProductsList, increaseProductCount, decreaseProductCount } from '../reducers/orderBasket';
-
+import { setProductsList, increaseProductCount, decreaseProductCount, setConfirmOrder } from '../reducers/orderBasket';
 
 const Card = ({ data, sectionType }) => {
   const [isCardHover, setIsCardHover] = useState(false);
@@ -11,6 +10,7 @@ const Card = ({ data, sectionType }) => {
   const [productCount, setProductCount] = useState(1);
   const basketPriceCounter = useSelector((state) => state.basketPriceCounter.basketPriceCounter);
   const isDelivery = useSelector((state) => state.delivery.isDelivery);
+  const confirmedOrder = useSelector((state) => state.orderBasket.confirmOrder);
   const dispatch = useDispatch();
 
   const onHoverCard = () => {
@@ -47,7 +47,8 @@ const Card = ({ data, sectionType }) => {
     setProductCount(1);
     setIsOrderCounterShown(false);
     dispatch(setBasketPriceCounter(0));
-  }, [isDelivery, dispatch])
+    dispatch(setConfirmOrder(false));
+  }, [isDelivery, dispatch, confirmedOrder])
 
   return (
     <li

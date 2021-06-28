@@ -2,25 +2,6 @@ import React from 'react';
 import logo from '../images/logo_xl.svg';
 
 const Footer = ({ windowWidth }) => {
-
-  const renderSubmenu = () => {
-    return (
-      <ul className='footer__menu'>
-        <li className='footer__menu-item'><a className='footer__menu-link' href='https://google.com'>Подраздел</a></li>
-        <li className='footer__menu-item'><a className='footer__menu-link' href='https://google.com'>Подраздел</a></li>
-        <li className='footer__menu-item'><a className='footer__menu-link' href='https://google.com'>Подраздел</a></li>
-        <li className='footer__menu-item'><a className='footer__menu-link' href='https://google.com'>Подраздел</a></li>
-        <li className='footer__menu-item'><a className='footer__menu-link' href='https://google.com'>Подраздел</a></li>
-      </ul>
-    )
-  }
-
-  const closeSubmenu = () => {
-    return (
-      <></>
-    )
-  }
-
   return (
     <footer className='footer'>
       <img className='footer__logo' src={logo} alt='logo' />
