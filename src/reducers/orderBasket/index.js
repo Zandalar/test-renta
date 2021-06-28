@@ -12,15 +12,17 @@ export const orderBasketSlice = createSlice({
     increaseProductCount: (state, action) => {
       state.productsList.map((product) => {
         if (product.name === action.payload) {
-          product.count++;
+          return product.count++;
         }
+        return product.count;
       })
     },
     decreaseProductCount: (state, action) => {
       state.productsList.map((product) => {
         if (product.name === action.payload) {
-          product.count--;
+          return product.count--;
         }
+        return product.count;
       })
     },
   },

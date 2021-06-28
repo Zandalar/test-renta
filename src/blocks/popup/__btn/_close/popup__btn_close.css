@@ -1,0 +1,25 @@
+.popup__btn_close {
+  background-image: url(../../../../images/icon__cross.svg);
+  background-color: rgba(0, 0, 0, 0);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  position: absolute;
+  top: -31px;
+  right: -31px;
+  width: 31px;
+  height: 31px;
+  transform: rotate(-360deg);
+}
+
+.popup__btn_close:hover {
+  transform: rotate(360deg);
+}
+
+@media all and (max-width: 500px) {
+  .popup__btn_close {
+    background-image: url(../../../../images/icon__cross_black.svg);
+    top: 10px;
+    right: 10px;
+  }
+}

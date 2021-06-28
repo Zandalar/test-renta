@@ -19,7 +19,7 @@ const Delivery = () => {
 
   useEffect(() => {
     dispatch(setIsValid(isValid))
-  }, [isValid])
+  }, [isValid, dispatch])
 
   return (
     <section className='delivery'>

@@ -17,25 +17,25 @@ const App = () => {
 
   const dispatch = useDispatch();
 
-  function updateHeight() {
+  const updateHeight = () => {
     setScrollHeight(window.pageYOffset);
   }
 
-  function isolatePopup(evt) {
+  const isolatePopup = (evt) => {
     evt.stopPropagation();
   }
 
-  function closeAllPopups() {
+  const closeAllPopups = () => {
     setIsInfoTooltipPopupOpen(false);
   }
 
-  function handleEscClick(evt) {
+  const handleEscClick = (evt) => {
     if (evt.key === 'Escape') {
       closeAllPopups();
     }
   }
 
-  function handleBasketClick() {
+  const handleBasketClick = () => {
     setIsInfoTooltipPopupOpen(true);
   }
 
