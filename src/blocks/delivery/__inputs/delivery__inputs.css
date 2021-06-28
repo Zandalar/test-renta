@@ -1,7 +1,13 @@
 .delivery__inputs {
   display: grid;
   grid-template-columns: repeat(2, min-content);
-  grid-template-rows: repeat(auto-fill, 1fr);
   grid-row-gap: 10px;
   align-items: flex-start;
+}
+
+@media all and (max-width: 1100px) {
+  .delivery__inputs {
+    grid-template-columns: 1fr 2fr;
+    justify-content: center;
+  }
 }

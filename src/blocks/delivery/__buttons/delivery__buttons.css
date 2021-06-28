@@ -1,3 +1,16 @@
 .delivery__buttons {
   display: flex;
 }
+
+@media all and (max-width: 1100px) {
+  .delivery__buttons {
+    margin-bottom: 30px;
+  }
+}
+
+@media all and (max-width: 500px) {
+  .delivery__buttons {
+    width: 100%;
+    margin-bottom: 30px;
+  }
+}

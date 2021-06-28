@@ -14,3 +14,12 @@
   padding: 12px 20px;
   text-align: center;
 }
+
+@media all and (max-width: 600px) {
+  .delivery__input-error {
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 16px;
+    padding: 6px 10px;
+  }
+}

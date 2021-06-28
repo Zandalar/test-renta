@@ -1,11 +1,11 @@
-function checkResponse(res) {
+const checkResponse = (res) => {
   if (res.ok) {
     return res.json();
   }
   return Promise.reject(res);
 }
 
-export function getCategories() {
+export const getCategories = () => {
   return fetch(process.env.NODE_ENV === 'production'
     ? '/categories'
     : 'http://localhost:3000/categories'
@@ -13,7 +13,7 @@ export function getCategories() {
     .then(checkResponse);
 }
 
-export function getProducts() {
+export const getProducts = () => {
   return fetch(process.env.NODE_ENV === 'production'
     ? '/products'
     : 'http://localhost:3000/products'

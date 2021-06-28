@@ -5,6 +5,7 @@
 
 @import url(./blocks/app/app.css);
 @import url(./blocks/header/header.css);
+@import url(./blocks/header/_fixed/header_fixed.css);
 @import url(./blocks/delivery/delivery.css);
 @import url(./blocks/categories/categories.css);
 @import url(./blocks/preloader/preloader.css);
@@ -16,3 +17,5 @@
 @import url(./blocks/footer/footer.css);
 @import url(./blocks/popup/popup.css);
 @import url(./blocks/popup/_opened/popup_opened.css);
+@import url(./blocks/menu/menu.css);
+@import url(./blocks/menu/_opened/menu_opened.css);

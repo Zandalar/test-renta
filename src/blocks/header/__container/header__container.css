@@ -1,7 +1,13 @@
 .header__container {
-  width: 100%;
+  width: calc(100% - 192px);
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin: 0 96px;
+  margin: 0;
+}
+
+@media all and (max-width: 600px) {
+  .header__container {
+    width: 92.5%;
+  }
 }

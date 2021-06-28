@@ -4,3 +4,12 @@
   grid-column-gap: 43px;
   align-items: flex-start;
 }
+
+@media all and (max-width: 1100px) {
+  .delivery__form {
+    width: 100%;
+    grid-template-columns: repeat(1, 100%);
+    justify-content: center;
+    grid-row-gap: 20px;
+  }
+}

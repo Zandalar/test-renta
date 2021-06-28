@@ -13,27 +13,27 @@ const Card = ({ data, sectionType }) => {
   const isDelivery = useSelector((state) => state.delivery.isDelivery);
   const dispatch = useDispatch();
 
-  function onHoverCard() {
+  const onHoverCard = () => {
     setIsCardHover(true);
   }
 
-  function onLeaveCard() {
+  const onLeaveCard = () => {
     setIsCardHover(false);
   }
 
-  function onCounterClick() {
+  const onCounterClick = () => {
     setIsOrderCounterShown(true);
     dispatch(setProductsList({name: data.name, count: productCount}));
     dispatch(setBasketPriceCounter(basketPriceCounter + data.price));
   }
 
-  function increaseCounter() {
+  const increaseCounter = () => {
     setProductCount(productCount + 1);
     dispatch(increaseProductCount(data.name))
     dispatch(setBasketPriceCounter(basketPriceCounter + data.price));
   }
 
-  function decreaseCounter() {
+  const decreaseCounter = () => {
     setProductCount(productCount - 1);
     dispatch(decreaseProductCount(data.name))
     dispatch(setBasketPriceCounter(basketPriceCounter - data.price));

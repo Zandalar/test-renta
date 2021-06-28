@@ -5,3 +5,10 @@
   box-sizing: border-box;
   border-radius: 50%;
 }
+
+@media all and (max-width: 600px) {
+  .footer__image {
+    width: 130px;
+    height: 130px;
+  }
+}

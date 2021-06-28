@@ -4,7 +4,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { setIsDelivery } from '../reducers/delivery';
 import { setIsValid } from '../reducers/validation';
 
-const Delivery = () => {
+const Delivery = ({ windowWidth }) => {
   const { values, errors, isValid, handleChange } = useValidator();
   const isDelivery = useSelector((state) => state.delivery.isDelivery);
   const dispatch = useDispatch();
@@ -24,6 +24,13 @@ const Delivery = () => {
   return (
     <section className='delivery'>
       <div className='delivery__container'>
+        {windowWidth < 1100
+          ? <div className='delivery__buttons'>
+              <button className={`delivery__btn ${isDelivery ? 'delivery__btn_active' : ''}`} type='button' onClick={setDeliveryOn}>Доставка</button>
+              <button className={`delivery__btn ${!isDelivery ? 'delivery__btn_active' : ''}`} type='button' onClick={setDeliveryOff}>Самовывоз</button>
+            </div>
+          : null
+        }
         <div className='delivery__block'>
         {isDelivery
           ? <>
@@ -67,10 +74,13 @@ const Delivery = () => {
           : null
         }
         </div>
-        <div className='delivery__buttons'>
-          <button className={`delivery__btn ${isDelivery ? 'delivery__btn_active' : ''}`} type='button' onClick={setDeliveryOn}>Доставка</button>
-          <button className={`delivery__btn ${!isDelivery ? 'delivery__btn_active' : ''}`} type='button' onClick={setDeliveryOff}>Самовывоз</button>
-        </div>
+        {windowWidth >= 1100
+          ? <div className='delivery__buttons'>
+            <button className={`delivery__btn ${isDelivery ? 'delivery__btn_active' : ''}`} type='button' onClick={setDeliveryOn}>Доставка</button>
+            <button className={`delivery__btn ${!isDelivery ? 'delivery__btn_active' : ''}`} type='button' onClick={setDeliveryOff}>Самовывоз</button>
+          </div>
+          : null
+        }
       </div>
     </section>
   )

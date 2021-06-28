@@ -1,44 +1,78 @@
 import React from 'react';
 import logo from '../images/logo_xl.svg';
 
-const Footer = () => {
+const Footer = ({ windowWidth }) => {
+
+  const renderSubmenu = () => {
+    return (
+      <ul className='footer__menu'>
+        <li className='footer__menu-item'><a className='footer__menu-link' href='https://google.com'>Подраздел</a></li>
+        <li className='footer__menu-item'><a className='footer__menu-link' href='https://google.com'>Подраздел</a></li>
+        <li className='footer__menu-item'><a className='footer__menu-link' href='https://google.com'>Подраздел</a></li>
+        <li className='footer__menu-item'><a className='footer__menu-link' href='https://google.com'>Подраздел</a></li>
+        <li className='footer__menu-item'><a className='footer__menu-link' href='https://google.com'>Подраздел</a></li>
+      </ul>
+    )
+  }
+
+  const closeSubmenu = () => {
+    return (
+      <></>
+    )
+  }
+
   return (
     <footer className='footer'>
       <img className='footer__logo' src={logo} alt='logo' />
       <div className='footer__container'>
-        <ul className='footer__nav'>
+        {windowWidth < 1100
+          ? <div className='footer__image' />
+          : null
+        }
+        <nav className='footer__nav'>
           <h2 className='footer__nav-title'>Раздел 1</h2>
-          <li className='footer__nav-item'>Подраздел</li>
-          <li className='footer__nav-item'>Подраздел</li>
-          <li className='footer__nav-item'>Подраздел</li>
-          <li className='footer__nav-item'>Подраздел</li>
-          <li className='footer__nav-item'>Подраздел</li>
-        </ul>
-        <ul className='footer__nav'>
+          <ul className='footer__menu'>
+            <li className='footer__menu-item'><a className='footer__menu-link' href='https://google.com'>Подраздел</a></li>
+            <li className='footer__menu-item'><a className='footer__menu-link' href='https://google.com'>Подраздел</a></li>
+            <li className='footer__menu-item'><a className='footer__menu-link' href='https://google.com'>Подраздел</a></li>
+            <li className='footer__menu-item'><a className='footer__menu-link' href='https://google.com'>Подраздел</a></li>
+            <li className='footer__menu-item'><a className='footer__menu-link' href='https://google.com'>Подраздел</a></li>
+          </ul>
+        </nav>
+        <nav className='footer__nav'>
           <h2 className='footer__nav-title'>Раздел 2</h2>
-          <li className='footer__nav-item'>Подраздел</li>
-          <li className='footer__nav-item'>Подраздел</li>
-          <li className='footer__nav-item'>Подраздел</li>
-          <li className='footer__nav-item'>Подраздел</li>
-          <li className='footer__nav-item'>Подраздел</li>
-        </ul>
-        <div className='footer__image' />
-        <ul className='footer__nav'>
+          <ul className='footer__menu'>
+            <li className='footer__menu-item'><a className='footer__menu-link' href='https://google.com'>Подраздел</a></li>
+            <li className='footer__menu-item'><a className='footer__menu-link' href='https://google.com'>Подраздел</a></li>
+            <li className='footer__menu-item'><a className='footer__menu-link' href='https://google.com'>Подраздел</a></li>
+            <li className='footer__menu-item'><a className='footer__menu-link' href='https://google.com'>Подраздел</a></li>
+            <li className='footer__menu-item'><a className='footer__menu-link' href='https://google.com'>Подраздел</a></li>
+          </ul>
+        </nav>
+        {windowWidth >= 1100
+          ? <div className='footer__image' />
+          : null
+        }
+        <nav className='footer__nav'>
           <h2 className='footer__nav-title'>Раздел 3</h2>
-          <li className='footer__nav-item'>Подраздел</li>
-          <li className='footer__nav-item'>Подраздел</li>
-          <li className='footer__nav-item'>Подраздел</li>
-          <li className='footer__nav-item'>Подраздел</li>
-          <li className='footer__nav-item'>Подраздел</li>
-        </ul>
-        <ul className='footer__nav'>
+          <ul className='footer__menu'>
+            <li className='footer__menu-item'><a className='footer__menu-link' href='https://google.com'>Подраздел</a></li>
+            <li className='footer__menu-item'><a className='footer__menu-link' href='https://google.com'>Подраздел</a></li>
+            <li className='footer__menu-item'><a className='footer__menu-link' href='https://google.com'>Подраздел</a></li>
+            <li className='footer__menu-item'><a className='footer__menu-link' href='https://google.com'>Подраздел</a></li>
+            <li className='footer__menu-item'><a className='footer__menu-link' href='https://google.com'>Подраздел</a></li>
+          </ul>
+        </nav>
+        <nav className='footer__nav'>
           <h2 className='footer__nav-title'>Раздел 4</h2>
-          <li className='footer__nav-item'>Подраздел</li>
-          <li className='footer__nav-item'>Подраздел</li>
-          <li className='footer__nav-item'>Подраздел</li>
-          <li className='footer__nav-item'>Подраздел</li>
-          <li className='footer__nav-item'>Подраздел</li>
-        </ul>
+          <ul className='footer__menu'>
+            <li className='footer__menu-item'><a className='footer__menu-link' href='https://google.com'>Подраздел</a></li>
+            <li className='footer__menu-item'><a className='footer__menu-link' href='https://google.com'>Подраздел</a></li>
+            <li className='footer__menu-item'><a className='footer__menu-link' href='https://google.com'>Подраздел</a></li>
+            <li className='footer__menu-item'><a className='footer__menu-link' href='https://google.com'>Подраздел</a></li>
+            <li className='footer__menu-item'><a className='footer__menu-link' href='https://google.com'>Подраздел</a></li>
+          </ul>
+        </nav>
       </div>
       <div className='footer__social'>
         <ul className='footer__social-list'>

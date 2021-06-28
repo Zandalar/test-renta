@@ -1,0 +1,17 @@
+.footer__menu-item {
+  font-size: 16px;
+  line-height: 24px;
+  margin: 0 0 17px 0;
+}
+
+.footer__menu-item:last-child {
+  margin: 0;
+}
+
+@media all and (max-width: 600px) {
+  .footer__menu-item {
+    font-size: 12px;
+    line-height: 14px;
+    margin: 0 0 10px 0;
+  }
+}

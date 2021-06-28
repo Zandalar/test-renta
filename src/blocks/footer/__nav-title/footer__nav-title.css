@@ -3,3 +3,11 @@
   line-height: 40px;
   margin: 0 0 23px 0;
 }
+
+@media all and (max-width: 600px) {
+  .footer__nav-title {
+    font-size: 24px;
+    line-height: 26px;
+    margin: 0 0 13px 0;
+  }
+}

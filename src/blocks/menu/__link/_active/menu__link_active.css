@@ -1,0 +1,4 @@
+.menu__link_active {
+  color: #e4002b;
+  border-bottom: 2px solid #e4002b;
+}

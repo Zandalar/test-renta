@@ -3,3 +3,10 @@
   font-size: 20px;
   line-height: 22px;
 }
+
+@media all and (max-width: 600px) {
+  .popup__message {
+    font-size: 16px;
+    line-height: 18px;
+  }
+}

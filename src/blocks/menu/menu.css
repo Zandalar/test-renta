@@ -1,0 +1,29 @@
+@import url(./__btn/menu__btn.css);
+@import url(./__container/menu__container.css);
+@import url(./__link/menu__link.css);
+@import url(./__link/_active/menu__link_active.css);
+@import url(./__list/menu__list.css);
+@import url(./__list-item/menu__list-item.css);
+
+.menu {
+  width: calc(100% - 248px);
+  height: 100vh;
+  background-color: #202020;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  opacity: 0;
+  transition: all .5s;
+  visibility: hidden;
+}
+
+@media all and (max-width: 600px) {
+  .menu {
+    width: 100%;
+    height: 100vh;
+  }
+}

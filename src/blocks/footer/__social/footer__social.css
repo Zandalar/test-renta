@@ -5,3 +5,13 @@
   justify-content: flex-end;
   position: relative;
 }
+
+@media all and (max-width: 900px) {
+  .footer__social {
+    width: 92.5%;
+    height: unset;
+    flex-direction: column;
+    align-items: center;
+    position: unset;
+  }
+}

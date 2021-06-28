@@ -1,0 +1,5 @@
+.menu_opened {
+  opacity: 1;
+  transition: all .5s;
+  visibility: visible;
+}

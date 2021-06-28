@@ -11,3 +11,16 @@
   left: 50%;
   transform: translate(-50%, 0);
 }
+
+@media all and (max-width: 900px) {
+  .footer__social-list {
+    width: 92.5%;
+    height: unset;
+    flex-direction: column;
+    align-items: center;
+    position: unset;
+    transform: unset;
+    justify-content: center;
+    margin-bottom: 20px;
+  }
+}

@@ -4,3 +4,9 @@
   font-size: 32px;
   line-height: 40px;
 }
+
+@media all and (max-width: 600px) {
+  .section__title {
+    width: 92.5%;
+  }
+}

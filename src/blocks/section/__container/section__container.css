@@ -10,3 +10,9 @@
   padding: 0;
   justify-content: center;
 }
+
+@media all and (max-width: 600px) {
+  .section__container {
+    width: 92.5%;
+  }
+}
