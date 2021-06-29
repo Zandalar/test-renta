@@ -1,70 +1,68 @@
-# Getting Started with Create React App
+# Тестовое задание
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+* Рабочее приложение можно посмотреть на [Heroku](https://test-renta.herokuapp.com/)
+* Выполнены все задания по брифу.
+* Время выполнения: +- 1 рабочая неделя :)
 
-## Available Scripts
+### Стек:
+* React.js (react-scroll, react-lazyload)
+* Redux (react-redux, redux toolkit)
+* Express.js (загрузка картинок на бэк, раздача статики, подключено логирование, cors, helmet, limiter)
+* MongoDB (хранение данных категорий и продуктов)
+* CSS (БЭМ Nested)
 
-In the project directory, you can run:
+### Запуск проекта
+#### бэк:
+`npm run start` — запускает сервер
 
-### `npm start`
+`npm run dev` — запускает сервер в режиме разработки с hot-reload
+#### фронт:
+`npm run start` — запускает приложение
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+`npm run build` — сборка webpack'ом
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+### Бриф:
 
-### `npm test`
+*По представленному макету сделать одностраничное web-приложение ресторана быстрой еды. [Макет](https://www.figma.com/file/JoADQpRXUjpBc5gObZkMIQ/Тестовое-задание.-Главная.?node-id=1:1687)*
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+*Из обязательных технологий React + Redux. Остальное на ваш вкус.*
 
-### `npm run build`
+### Задачу можно выполнить на 3х разных уровнях:
+#### начинающий (вёрстка и отображение данных)
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+* товары загружаются с бэкэнда при открытии страницы (API отдающее данные реализуйте сами, node.js приветсвуется, но не обязателен)
+* категории расположенны на главной странице друг под другом (можно скролить вверх вниз)
+* товары разделены по категориям, названия категорий отображаются на панели категорий, при клике на название происходитс скролл к соответствующей категории.
+* панель с названиями категорий при скроле вниз "прилипает" к верхней части экрана.
+* у меню есть 2‑е вкладки, "доставка" и "самовывоз", при клике на "доставку" должны появляться панели для ввода адреса.
+* некоторые товары нельзя получить доставкой, поэтому при включённой вкладке "доставка" они должны скрываться.
+* вёрстка должна быть адаптивной (сделайте на свой вкус)
+  
+#### стандарт (функционал корзины и валидация данных)
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+* на кнопке изменения количества товара, при клике на минус, количество товара в корзине уменьшается, при клике на плюс увеличивается.
+* общая сумма товара отображается в корзине справа сверху.
+* при клике на кнопку корзины, блюда добавленные в корзину должны уйти на бэкэнд (можете отправлять на свой API или просто выводить в консоль), а корзина очищается.
+* при выбранной вкладке "доставка", на странице появляются 2а поля для ввода адреса. Нужно проверять заполненность полей адреса и не отправлять данные, пока пользователь не заполнит их, при попытке отправить корзину до заполнения надо показывать тултип.
+* состояние корзины надо хранить в redux
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+#### продвинутый (отслеживание скролла)
 
-### `npm run eject`
+* при скролле страницы, название категории которую просматривает пользователь должно подчёркиваться в панели категорий
+* для загружающихся картинок применена Lazy Load
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+### Формат данных
+#### товар:
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+* "id" - идентификатор товара.
+* "name" - название товара
+* "price" - цена товара
+* "delivery" - true - если товар доступен для доставки, false - если не доступен
+* "img" - картинка товара формат разный
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+#### категория:
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+* "id" - идентификатор категории
+* "name" - название категории
+* "products" - массив с ID товаров в категории
 
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
