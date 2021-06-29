@@ -6,8 +6,6 @@ import MobileMenu from './MobileMenu';
 
 const Header = ({ handleBasketClick, windowWidth, scrollHeight }) => {
   const basketPriceCounter = useSelector((state) => state.basketPriceCounter.basketPriceCounter);
-  const isDeliveryValid = useSelector((state) => state.validation.isValid);
-  const isDelivery = useSelector((state) => state.delivery.isDelivery);
   const [isMobileMenuOpened, setIsMobileMenuOpened] = React.useState(false);
 
   const handleMenuClick = () => {
@@ -19,7 +17,7 @@ const Header = ({ handleBasketClick, windowWidth, scrollHeight }) => {
       <div className='header__container'>
         <img className='header__logo' src={logo} alt='logo' />
         <button className='header__menu' type='button' onClick={handleMenuClick}/>
-        <button className='header__basket' onClick={handleBasketClick} disabled={!isDeliveryValid && isDelivery && true}>
+        <button className='header__basket' onClick={handleBasketClick} >
           <p className='header__basket-count'>{basketPriceCounter} &#8381;</p>
           <img className='header__basket-image' src={emptyBasket} alt='empty basket' />
         </button>

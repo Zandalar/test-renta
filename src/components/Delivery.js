@@ -3,18 +3,22 @@ import useValidator from '../hooks/useValidator';
 import { useDispatch, useSelector } from 'react-redux';
 import { setIsDelivery } from '../reducers/delivery';
 import { setIsValid } from '../reducers/validation';
+import { resetProductList } from '../reducers/orderBasket';
 
 const Delivery = ({ windowWidth }) => {
   const { values, errors, isValid, handleChange } = useValidator();
   const isDelivery = useSelector((state) => state.delivery.isDelivery);
+  const isDeliveryValid = useSelector((state) => state.validation.isValid);
   const dispatch = useDispatch();
 
   const setDeliveryOn = () => {
     dispatch(setIsDelivery(true));
+    dispatch(resetProductList());
   }
 
   const setDeliveryOff = () => {
     dispatch(setIsDelivery(false));
+    dispatch(resetProductList());
   }
 
   useEffect(() => {
@@ -31,7 +35,7 @@ const Delivery = ({ windowWidth }) => {
             </div>
           : null
         }
-        <div className='delivery__block'>
+        <div className='delivery__block' id='address'>
         {isDelivery
           ? <>
               <h2 className='delivery__title'>Доставка г. Москва</h2>
@@ -65,9 +69,14 @@ const Delivery = ({ windowWidth }) => {
                     placeholder='Введите номер дома'
                     required
                   />
-                  <span className={`delivery__input-error ${errors.house && 'delivery__input-error_active'}`}>
-                    {errors.house || ''}
-                  </span>
+                  {!isDeliveryValid
+                    ? <span className='delivery__input-error delivery__input-error_address'>
+                        Укажите адрес доставки!
+                      </span>
+                    : <span className={`delivery__input-error ${errors.house && 'delivery__input-error_active'}`}>
+                        {errors.house || ''}
+                      </span>
+                  }
                 </div>
               </form>
             </>

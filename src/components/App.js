@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
-import { useDispatch } from 'react-redux';
+import {useDispatch, useSelector} from 'react-redux';
+import { animateScroll as scroll } from 'react-scroll';
 import * as api from '../utils/api';
 import Header from './Header';
 import Delivery from './Delivery';
@@ -14,6 +15,7 @@ const App = () => {
   const [scrollHeight, setScrollHeight] = useState(0);
   const [isInfoTooltipPopupOpen, setIsInfoTooltipPopupOpen] = React.useState(false);
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+  const isDeliveryValid = useSelector((state) => state.validation.isValid);
 
   const dispatch = useDispatch();
 
@@ -40,7 +42,7 @@ const App = () => {
   }
 
   const handleBasketClick = () => {
-    setIsInfoTooltipPopupOpen(true);
+    isDeliveryValid ? setIsInfoTooltipPopupOpen(true) : scroll.scrollToTop();
   }
 
   useEffect(() => {
