@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import LazyLoad from 'react-lazyload';
 import { setBasketPriceCounter} from '../reducers/basketPriceCounter';
-import { setProductsList, increaseProductCount, decreaseProductCount, setConfirmOrder } from '../reducers/orderBasket';
+import { setProductsList, increaseProductCount, decreaseProductCount, setConfirmOrder, resetProductList } from '../reducers/orderBasket';
 import burger from '../images/burger.png';
 
 const Card = ({ data, sectionType }) => {
@@ -41,6 +41,7 @@ const Card = ({ data, sectionType }) => {
     if (productCount < 2) {
       setIsOrderCounterShown(false);
       setProductCount(1);
+      dispatch(resetProductList());
     }
   }
 

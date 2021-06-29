@@ -16,6 +16,7 @@ const App = () => {
   const [isInfoTooltipPopupOpen, setIsInfoTooltipPopupOpen] = React.useState(false);
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
   const isDeliveryValid = useSelector((state) => state.validation.isValid);
+  const isDelivery = useSelector((state) => state.delivery.isDelivery);
 
   const dispatch = useDispatch();
 
@@ -42,7 +43,9 @@ const App = () => {
   }
 
   const handleBasketClick = () => {
-    isDeliveryValid ? setIsInfoTooltipPopupOpen(true) : scroll.scrollToTop();
+    isDelivery
+      ? (isDeliveryValid ? setIsInfoTooltipPopupOpen(true) : scroll.scrollToTop())
+      : setIsInfoTooltipPopupOpen(true)
   }
 
   useEffect(() => {
